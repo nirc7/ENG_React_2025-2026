@@ -13,7 +13,10 @@ export default class CCCalculator extends Component {
 
   chgTxtNum1 = (e) => {
     console.log(this.state.num1);//0
-    this.setState({ num1: Number(e.target.value) });
+    this.setState({
+      num1: Number(e.target.value),
+      result: 5
+    });
     console.log(this.state.num1);//7
   }
 
@@ -23,6 +26,15 @@ export default class CCCalculator extends Component {
 
   btnSum = () => {
     this.setState({ result: this.state.num1 + this.state.num2 });
+  }
+
+  btnAdd2Res = () => {
+    console.log(this.state.result);
+    this.setState(prevS => ({ result: prevS.result + 1 }));
+    //console.log(this.state.result);    
+    //this.setState({ result: this.state.result + 1 });
+    console.log(this.state.result);
+    this.setState({ num1: 7 });
   }
 
   render() {
@@ -44,7 +56,8 @@ export default class CCCalculator extends Component {
         {this.state.num2} <br /><br />
 
         <button onClick={this.btnSum} >+</button> <br />
-        = {this.state.result}
+        = {this.state.result} <br />
+        <button onClick={this.btnAdd2Res} >++</button> <br />
       </div>
     );
   }
