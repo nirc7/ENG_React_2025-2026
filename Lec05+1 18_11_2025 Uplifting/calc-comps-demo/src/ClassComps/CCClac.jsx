@@ -14,7 +14,6 @@ export default class CCClac extends Component {
   getResFromInputs = (res) => {
     console.log(res);
     this.setState({ result: res });
-
   }
 
 
@@ -29,7 +28,7 @@ export default class CCClac extends Component {
         color: 'purple'
       }}>CCClac <br />
         <FCInputs sendtResFromInputs={this.getResFromInputs}/>
-        <CCInputs sendtResFromInputs={this.getResFromInputs} />  ci1.render();
+        <CCInputs sendtResFromInputs={this.getResFromInputs} />  
         <FCResult res={this.state.result} />
       </div>
     )
