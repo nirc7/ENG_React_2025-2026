@@ -3,10 +3,7 @@ import { Component } from 'react'
 export default class CCInputs extends Component {
   constructor(props) {
     super(props);
-
-
   }
-
 
   chgNum1 = (e) => {
     this.setState({ num1: Number(e.target.value) });
