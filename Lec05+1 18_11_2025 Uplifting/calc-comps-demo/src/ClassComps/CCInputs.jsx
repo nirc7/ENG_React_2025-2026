@@ -52,7 +52,7 @@ export default class CCInputs extends Component {
           <label htmlFor="floatingInput">num2...</label>
         </div>
         num1: <input type="number"
-          placeholder="enter num1" onChange={this.chgNum1} /> <br />
+          placeholder="enter num1" value={this.state.num1} onChange={this.chgNum1} /> <br />
         num2: <input type="text"
           placeholder="enter num2" onChange={this.chgNum2} /> <br />
         <button type="button"
