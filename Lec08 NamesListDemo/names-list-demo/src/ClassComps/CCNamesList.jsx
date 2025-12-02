@@ -2,6 +2,10 @@ import { Component } from 'react';
 import FCListDetails from '../FuncComps/FCListDetails';
 import CCInputs from './CCInputs';
 
+//import cp from '../assets/cp_assets.png'; // with import
+//import cp_images from '../images/cp_images.png'; // with import
+
+
 export default class CCNamesList extends Component {
   constructor(props) {
     super(props);
@@ -26,9 +30,33 @@ export default class CCNamesList extends Component {
 
   render() {
     return (
-      <div style={{ border: '2px dashed beige', margin: 15, padding: 10 }}>CCNamesList <br />
+      <div style={{ border: '2px dashed beige', margin: 15, padding: 10 }}>
+        cp public <img width={50} src="./cp_public.jpg" /> <br />
+        cp assets <img width={50} src="../assets/cp_assets.PNG" /><br />
+        {/* cp assets import <img width={50} src={cp} /><br /> */}
+        cp images <img width={50} src={require("cp_images.png")} /><br />
+        {/* cp images <img width={50} src={cp_images} /><br /> */}
+
+
+        CCNamesList <br />
         <CCInputs sendPerson={this.getPerson} />
         <FCListDetails persons={this.state.persons} removePerson={this.removePerson} />
+
+
+        {/* <div style={{ border: '2px dashed beige' }}>
+          hello world! <br />
+          one
+        </div>
+
+        asd lkj lkj <span style={{ border: '2px dashed red', color:'green' }}> lkj lkj lkj lkj <br />
+        asdas lkjlkj <br />
+        lkjlkj  lkj lkj lkj lkj lk jl </span> kj lkj lk j
+
+        <ul>
+          <li>one</li>
+          <li>two</li>
+        </ul> */}
+
       </div>
     )
   }
