@@ -1,5 +1,9 @@
 import { Component } from 'react';
 
+import { v4 as uuidv4 } from 'uuid';
+
+
+
 export default class CCInputs extends Component {
   constructor(props) {
     super(props);
@@ -8,9 +12,13 @@ export default class CCInputs extends Component {
   }
 
 
-  btnAddPerson=()=>{
-    this.setState({name: '', age: ''});
-    this.props.sendPerson({ name: this.state.name, age: this.state.age });
+  btnAddPerson = () => {
+    this.setState({ name: '', age: '' });
+    this.props.sendPerson({
+      id: uuidv4(),
+      name: this.state.name,
+      age: this.state.age
+    });
   }
 
   render() {
