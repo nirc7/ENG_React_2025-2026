@@ -4,7 +4,7 @@ import CCInputs from './CCInputs';
 
 //import cp from '../assets/cp_assets.png'; // with import
 //import cp_images from '../images/cp_images.png'; // with import
-
+import x from "../images/cp_public.jpg";
 
 export default class CCNamesList extends Component {
   constructor(props) {
@@ -34,8 +34,8 @@ export default class CCNamesList extends Component {
         cp public <img width={50} src="./cp_public.jpg" /> <br />
         cp assets <img width={50} src="../assets/cp_assets.PNG" /><br />
         {/* cp assets import <img width={50} src={cp} /><br /> */}
-        cp images <img width={50} src={require("cp_images.png")} /><br />
-        {/* cp images <img width={50} src={cp_images} /><br /> */}
+        cp images <img width={50} src={"../images/cp_public.jpg"} /><br />
+        cp images <img width={50} src={x} /><br />
 
 
         CCNamesList <br />
