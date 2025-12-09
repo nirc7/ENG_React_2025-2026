@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 export default function Person(props) {
@@ -22,6 +22,33 @@ export default function Person(props) {
 
   console.log(num);
 
+  useEffect(() => {
+    console.log('general ue');
+  });
+
+  useEffect(() => {
+    console.log('count changed save ti to DB!', count);
+  }, [count]);
+
+  useEffect(() => {
+    console.log('count2 changed save ti to DB!', count2);
+  }, [count2]);
+
+  useEffect(() => {
+    console.log('count count2 changed save ti to DB!', count, count2);
+  }, [count, count2]);
+
+  useEffect(() => {
+    console.log('did mount  - go fetch students from DB....setStudents(students)');
+
+
+    return () => {
+      console.log('will unmount!  - free resorces!');
+    }
+  }, []);
+
+
+  console.log(num);
 
   return (
     <div>Person <br />
