@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 
 export default function ProductItem(props) {
 
-  let { name, price, quantity, imgSrc } = props.prod;
+  let { id, name, price, quantity, imgSrc } = props.prod;
 
   return (
     <div style={{ width: 200, margin: 20 }}>
@@ -33,7 +33,7 @@ export default function ProductItem(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <IconButton color="primary" aria-label="add to shopping cart" >
+          <IconButton color="primary" aria-label="add to shopping cart" onClick={()=> props.buyItem(id)} >
             <AddShoppingCartIcon />
           </IconButton>
         </CardActions>

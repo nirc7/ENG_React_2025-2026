@@ -6,7 +6,7 @@ export default function ProductList({ productList, buyItem }) {
   //let {productList} = props;
 
   let productsStr = productList.map(prod =>
-    <ProductItem key={prod.id} prod={prod}/>
+    <ProductItem key={prod.id} prod={prod} buyItem={buyItem}/>
   );
 
   return (

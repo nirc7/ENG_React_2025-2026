@@ -4,7 +4,7 @@ export default function Cart({ cartList }) {
 
 
   let cartsStr = cartList.map(cart =>
-    <CartItem key={cart.id} cart={cart} />
+    <CartItem key={cart.uuid} cart={cart} />
   );
 
   return (

@@ -2,7 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import Cart from './Cart'
 import EShop from './Elements/EShop'
-import ProductList from './ProductList'
+import ProductList from './ProductList';
+
+import { v4 as uuidv4 } from 'uuid';
 
 const productsInit = [
   {
@@ -29,11 +31,13 @@ const productsInit = [
 
 const cartsInit = [
   {
+    uuid: 1,
     id: 1,
     name: 'pants',
     price: 50
   },
   {
+    uuid: 2,
     id: 2,
     name: 'Tshirt',
     price: 30
@@ -47,8 +51,21 @@ function App() {
   const [counter, setCounter] = useState(productsInit.length);
 
 
-  buyItem = (id) => {
-    console.log(id);
+  const buyItem = (id) => {
+
+    let product2Find = productList.find(prod => prod.id === id);
+
+    let newCartItem = {
+      uuid: uuidv4(),
+      id: product2Find.id,
+      name: product2Find.name,
+      price: product2Find.price
+    }
+    let newCartList = [...cartList, newCartItem];
+    setCartList(newCartList);
+
+    product2Find.quantity--;
+    setProductList(productList);
   }
 
   return (
