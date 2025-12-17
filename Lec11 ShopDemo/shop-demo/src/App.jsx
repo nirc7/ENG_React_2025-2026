@@ -50,6 +50,21 @@ function App() {
   const [cartList, setCartList] = useState(cartsInit);
   const [counter, setCounter] = useState(productsInit.length);
 
+  const pay = () => {
+    setCartList([]);
+  }
+
+  const removeFromCart = (uuid) => {
+    console.log(uuid);
+    let cart2Find = cartList.find(cart => cart.uuid === uuid);
+
+    let prod2Find = productList.find(prod => prod.id === cart2Find.id);
+    prod2Find.quantity++;
+    setProductList(productList);
+
+    let newCartList = cartList.filter(cart => cart.uuid !== uuid);
+    setCartList(newCartList);
+  }
 
   const buyItem = (id) => {
 
@@ -75,7 +90,7 @@ function App() {
 
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           {EShop}
-          <Cart cartList={cartList} />
+          <Cart cartList={cartList} removeFromCart={removeFromCart} pay={pay} />
         </div>
 
         <ProductList productList={productList} buyItem={buyItem} />
